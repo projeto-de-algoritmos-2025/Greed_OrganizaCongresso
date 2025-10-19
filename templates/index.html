@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Alocador de Salas - Congresso</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Agendamento de Salas (Interval Partitioning)</h1>
+
+        <div class="card">
+            <div class="card-body">
+                <form action="/" method="POST">
+                    <div class="mb-3">
+                        <label for="eventos_input" class="form-label">
+                            <strong>Insira os Eventos</strong>
+                        </label>
+                        <p class="form-text">
+                            Use o formato: <code>Nome do Evento, HH:MM (início), HH:MM (fim)</code>. Um evento por
+                            linha.
+                        </p>
+                        <textarea class="form-control" id="eventos_input" name="eventos_input" rows="10"
+                            placeholder="Ex: Palestra de IA, 09:00, 10:30&#10;Workshop de Python, 09:30, 11:00&#10;Reunião Geral, 10:45, 12:00"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Calcular Agendamento Mínimo</button>
+                </form>
+            </div>
+        </div>
+
+        {% if alocacao %}
+        <div class="mt-5">
+            <h2>Resultado do Agendamento</h2>
+            <p>Número mínimo de salas necessárias: <strong>{{ alocacao|length }}</strong></p>
+
+            {% for sala in alocacao %}
+            <div class="card mt-3">
+                <div class="card-header">
+                    <strong>Sala {{ loop.index }}</strong>
+                </div>
+                <ul class="list-group list-group-flush">
+                    {% for evento in sala %}
+                    <li class="list-group-item">
+                        <strong>{{ evento.nome }}</strong> (das {{ "%02d:%02d"|format(evento.inicio//60,
+                        evento.inicio%60) }} às {{ "%02d:%02d"|format(evento.fim//60, evento.fim%60) }})
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>
