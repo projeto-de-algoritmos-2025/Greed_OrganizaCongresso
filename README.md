@@ -1,4 +1,4 @@
-# Agemdador de Salas Inteligente com Alocador de Recursos
+# Agendador de Salas Inteligente com Alocador de Recursos
 
 **Número da Lista**: 28<br>
 **Conteúdo da Disciplina**: Greed<br>
