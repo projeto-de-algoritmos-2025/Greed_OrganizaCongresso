@@ -74,3 +74,7 @@ Após iniciar a aplicação, a interface web será exibida:
 3.  **Selecione os Equipamentos Eletrônicos**: Marque os equipamentos desejados e, da mesma forma, defina suas prioridades.
 4.  **Clique em "Agendar e Otimizar Recursos"**: O sistema irá procurar uma sala disponível no horário solicitado e realizará a alocação otimizada dos recursos.
 5.  **Veja o Resultado**: O resultado será exibido na tela, informando a sala agendada, os recursos que foram total ou parcialmente alocados e os que foram recusados, junto com um resumo do consumo de banda e espaços de equipamentos.
+
+## Gravação 
+
+[Link da gravação](https://youtu.be/5WUxlv2JSdI)
